@@ -6,6 +6,7 @@ import ContactPage from './Components/ContactPage';
 import AboutPage from './Components/AboutPage';
 import Projects from './Components/Projects';
 import Research from './Components/Research';
+import PhotoPage from './Components/PhotoPage';
 
 import oncology from './photos/oncology.jpeg';
 import blood from './photos/blood.jpeg';
@@ -17,36 +18,8 @@ import logo from './photos/logo.jpeg';
 
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      currentImage: 0,
-    };
-
-    this.images = [
-      slide,
-      oncology,
-      blood,
-      slide2
-      // Add more image URLs here
-    ];
-  }
-  componentDidMount() {
-    console.log("hi")
-    this.interval = setInterval(() => {
-      this.setState((prevState) => ({
-        currentImage: (prevState.currentImage + 1) % this.images.length,
-      }));
-    }, 5000);
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
-
+  
   render() {
-    const { currentImage } = this.state;
 
     return (
       <Router>
@@ -60,26 +33,15 @@ class App extends React.Component {
             <Link to="/contact">Contact</Link>
             <Link to="/projects">Projects</Link>
             <Link to="/research">Research</Link>
+            <Link to="/photos">Photos</Link>
+
 
 
           </div>
-          <div className="carousel-container">
-          {this.images.map((image, index) => (
-          <div key={index} className="carousel-image-container">
-
-            <img
-              key={index} 
-              src={image}
-              alt={`Carousel Image ${index}`}
-              className={`carousel-image ${index === currentImage ? 'active' : ''}`}
-            />
-                    </div>
-
-          ))}
-        </div>
 
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/photos" element={<PhotoPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/projects" element={<Projects />} />
