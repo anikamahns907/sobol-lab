@@ -1,0 +1,186 @@
+.swag {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.frontPage {
+  background-color: #F5F5F5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  color: black;
+}
+
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+nav {
+  display: flex;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav li {
+  margin-right: 10px; /* Adjust the spacing between  items */
+}
+
+
+.menuBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 100px 0px 30px;
+  background-color: black;
+}
+
+.menuBar a {
+  color: white;
+  text-decoration: none;
+  margin: 0px 30px;
+
+}
+
+.menuBar a:hover {
+  color: grey;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.introduction {
+  width:700px;
+  display: flex;
+  align-items: center;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-200px); /* Initial position of the image */
+    opacity: 0; /* Initial opacity of the image */
+  }
+  100% {
+    transform: translateX(0); /* Final position of the image */
+    opacity: 1; /* Final opacity of the image */
+  }
+}
+
+.introduction img {
+  width: 300px;
+  height: auto;
+  margin-right: 50px; 
+  position: relative;
+  animation: slideIn 1s ease-in-out; /* Apply the animation to the image */
+}
+
+
+@keyframes slide-in {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+.text-container p {
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.text-container p::after {
+  content: "";
+  display: block;
+  height: 1em; /* Adjust the height to control the space between sentences */
+}
+
+.particle-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.questions {
+  background-color: black;
+}
+
+
+.logoContainer {
+  padding-left: 0px; /* Adjust the padding as needed */
+}
+
+.logo {
+  width: 100px; /* Set the width of the logo */
+  height: auto; /* Maintain aspect ratio */
+}
+.carousel-wrapper {
+  position: relative;
+}
+
+.menu-bar-placeholder {
+  height: 80px; /* Adjust the height to match the menu bar's height */
+}
+
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 500px; /* Adjust the height to fit your images */
+  overflow: hidden;
+}
+
+.carousel-image {
+  position: absolute;
+  object-fit: cover;
+  object-position: 80% 20%;
+  top: 0;
+  left: 0;
+  width: calc(100% - 600px); /* Adjust the padding value as needed */
+  height: 100%;
+  margin: 0 300px; /* Adjust the padding value as needed */
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+
+.carousel-image.active {
+  opacity: 1;
+}
